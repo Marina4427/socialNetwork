@@ -1,0 +1,28 @@
+import { Suspense } from "react";
+import { Route, Router, Routes } from "react-router-dom";
+import Layout from "./layout/Layout";
+import Home from "./pages/Home/Home";
+import Friends from "./pages/Friends/Friends";
+import Register from "./pages/Register/Register";
+import Login from "./pages/Login/Login";
+import MyProfile from "./pages/MyProfile/MyProfile";
+import './styles/style.scss';
+import './utils/i18n';
+import { Suspense } from "react";
+
+function App() {
+  return (
+    <Suspense fallback={"...Loading"} >
+      <Routes>
+        <Route path="/" element={<Layout />} />
+        <Route path="" element={<Home />} />
+        <Route path="friends" element={<Friends />} />
+        <Route path="register" element={<Register />} />
+        <Route path="login" element={<Login />} />
+        <Route path="myprofile" element={<MyProfile />} />
+      </Routes>
+    </Suspense>
+  );
+}
+
+export default App;
