@@ -1,6 +1,10 @@
+import { useTransition } from "react";
 import { IoMdSearch } from "react-icons/io";
 
+
 const HeaderSearch = () => {
+
+
   return (
     <label className="header__search">
       <span className="header__search-icon">
@@ -9,7 +13,7 @@ const HeaderSearch = () => {
       <input
         className="header__search-field"
         type="text"
-        placeholder="Search"
+        placeholder="Поиск"
       />
     </label>
   );

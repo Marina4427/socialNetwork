@@ -7,19 +7,18 @@ import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
 import MyProfile from "./pages/MyProfile/MyProfile";
 import './styles/style.scss';
-import './utils/i18n';
-import { Suspense } from "react";
 
 function App() {
   return (
-    <Suspense fallback={"...Loading"} >
+    <Suspense fallback={"...Loading"}>
       <Routes>
-        <Route path="/" element={<Layout />} />
-        <Route path="" element={<Home />} />
-        <Route path="friends" element={<Friends />} />
-        <Route path="register" element={<Register />} />
-        <Route path="login" element={<Login />} />
-        <Route path="myprofile" element={<MyProfile />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="friends" element={<Friends />} />
+          <Route path="register" element={<Register />} />
+          <Route path="login" element={<Login />} />
+          <Route path="myprofile" element={<MyProfile />} />
+        </Route>
       </Routes>
     </Suspense>
   );
