@@ -8,6 +8,7 @@ import Login from "./pages/Login/Login";
 import MyProfile from "./pages/MyProfile/MyProfile";
 import './styles/style.scss';
 import './utils/i18n';
+import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="register" element={<Register />} />
           <Route path="login" element={<Login />} />
           <Route path="myprofile" element={<MyProfile />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </Suspense>

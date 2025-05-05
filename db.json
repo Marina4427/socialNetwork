@@ -1,1 +1,15 @@
-"users": [{}]
+{
+  "users": [
+    {
+      "email": "test@ty.ty",
+      "password": "$2a$10$TJDVQTUTzajrfqwgjRPD5Ox9fevnAxJTVylqI01xrTXecjqP4ySMa",
+      "name": "Test",
+      "surname": "Test",
+      "gender": "women",
+      "birthday": "2025-04-28",
+      "city": "Spb",
+      "phone": "+7 (454) 545-45-54",
+      "id": 2
+    }
+  ]
+}

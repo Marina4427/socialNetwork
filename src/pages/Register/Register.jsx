@@ -7,6 +7,8 @@ import { BiErrorCircle } from "react-icons/bi";
 import { FaRegEye } from "react-icons/fa6";
 import { FaRegEyeSlash } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import { fillUser } from "../../redux/reducers/userSlice";
 
 const Register = () => {
   const { t } = useTranslation();
@@ -19,6 +21,9 @@ const Register = () => {
     watch,
     formState: { errors },
   } = useForm({ mode: "onBlur" });
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const passwordValue = watch("password");
 
@@ -33,8 +38,8 @@ const Register = () => {
     axios
       .post("http://localhost:4444/register", userData)
       .then(({ data }) => {
-        console.log(data);
-        reset();
+        dispatch(fillUser(data))
+        navigate('/')
       })
       .catch((err) => console.log(err));
   };
@@ -112,20 +117,24 @@ const Register = () => {
               </label>
             </div>
             <label className="register__label">
-              <h2 className="register__label-title">{t("form.labelLogin")}</h2>
+              <h2 className="register__label-title">E-mail</h2>
               <input
-                {...register("login", {
+                {...register("email", {
                   required: "Field is required",
                   minLength: {
-                    message: "Minimum 2 characters",
-                    value: 2,
-                  }
+                    message: "Minimum 6 characters",
+                    value: 6,
+                  }, 
+                  pattern: {
+                    message: "Enter correctly your email",
+                    value: /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i,
+                  },
                 })}
-                type="text"
-                placeholder={t("form.labelLogin")}
+                type="email"
+                placeholder="email"
                 autoComplete="username"
                 className="register__field"
-                style={{ border: errors.login && "#f5222d 1px solid" }}
+                style={{ border: errors.email && "#f5222d 1px solid" }}
               />
               <span className="register__error">
                 {errors.email && <BiErrorCircle fill="#f5222d" />}
@@ -215,9 +224,9 @@ const Register = () => {
                     className="register__field"
                     placeholder={t("form.labelPasswordAgain")}
                     style={{
-                      border: errors.confirmPwd && "#f5222d 1px solid",
+                      border: errors.passwordAgain && "#f5222d 1px solid",
                     }}
-                    {...register("confirmPwd", {
+                    {...register("passwordAgain", {
                       required: "Please confirm your password",
                       validate: (value) =>
                         value === passwordValue ||
@@ -232,9 +241,9 @@ const Register = () => {
                   </span>
                 </div>
                 <span className="register__error">
-                  {errors.confirmPwd && <BiErrorCircle fill="#f5222d" />}
+                  {errors.passwordAgain && <BiErrorCircle fill="#f5222d" />}
                   <span className="register__error-text">
-                    {errors.confirmPwd && errors.confirmPwd.message}
+                    {errors.passwordAgain && errors.passwordAgain.message}
                   </span>
                 </span>
               </label>
@@ -328,7 +337,7 @@ const Register = () => {
               {t("form.btn1")}
             </button>
             <p className="register__text"> {t("form.question1")} </p>
-            <Link className="register__question" to="/login">
+            <Link className="register__question" to="/email">
               {t("form.btn2")}
             </Link>
           </form>

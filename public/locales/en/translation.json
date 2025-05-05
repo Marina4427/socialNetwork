@@ -7,7 +7,6 @@
 		"title2": "Login",
 		"labelName": "Name",
 		"labelSurname": "Surname",
-		"labelLogin": "Login",
 		"labelPhone": "Phone",
 		"labelAge": "Birthday",
 		"labelPassword": "Password",

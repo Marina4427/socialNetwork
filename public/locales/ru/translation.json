@@ -7,7 +7,6 @@
 		"title2": "Вход",
 		"labelName": "Имя",
 		"labelSurname": "Фамилия",
-		"labelLogin": "Логин",
 		"labelPhone": "Телефон",
 		"labelAge": "День рождения",
 		"labelPassword": "Пароль",
