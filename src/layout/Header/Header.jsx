@@ -1,9 +1,12 @@
-import HeaderSearch from "../../components/headerSearch/HeaderSearch";
+import HeaderSearch from "./HeaderSearch";
 import { IoNotifications } from "react-icons/io5";
 import noUser from "../../assets/no-photo.jpg";
 import { IoIosArrowDown } from "react-icons/io";
+import SwitchLang from './SwitchLang/SwitchLang';
 
 const Header = () => {
+
+  
   return (
     <header className="header">
       <div className="container">
@@ -17,6 +20,7 @@ const Header = () => {
             <span className="header__notif">
               <IoNotifications />
             </span>
+            <SwitchLang />
             <span className="header__user">
               <img src={noUser} alt="User photo not found" className="header__user-photo"/>
               <span className="header__user-icon"><IoIosArrowDown /></span>

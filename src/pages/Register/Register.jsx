@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import axios from "../../utils/axios";
-import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm, Controller } from "react-hook-form";
 import { IMaskInput } from "react-imask";
 import { BiErrorCircle } from "react-icons/bi";
 import { FaRegEye } from "react-icons/fa6";
 import { FaRegEyeSlash } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
 
 const Register = () => {
-  const navigate = useNavigate();
-
+  const { t } = useTranslation();
   const [passwordView, setPasswordView] = useState(false);
   const {
     register,
@@ -28,22 +27,34 @@ const Register = () => {
     setHasValue(!!e.target.value);
   };
 
+  const registerUser = (data) => {
+    const { passwordAgain, ...userData } = data;
+
+    axios
+      .post("http://localhost:4444/register", userData)
+      .then(({ data }) => {
+        console.log(data);
+        reset();
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div className="register">
       <div className="container">
-        <div className="register__content" >
+        <div className="register__content">
           <form
             className="register__form"
             noValidate
-            // onSubmit={handleSubmit(registerUser)}
+            onSubmit={handleSubmit(registerUser)}
           >
-            <h1 className="register__title">Register</h1>
+            <h1 className="register__title">{t("form.title1")}</h1>
             <div className="register__block">
               <label className="register__label">
-                <h2 className="register__label-title">Name</h2>
+                <h2 className="register__label-title">{t("form.labelName")}</h2>
                 <input
                   style={{ border: errors.name && "#f5222d 1px solid" }}
-                  placeholder="Enter name"
+                  placeholder={t("form.labelName")}
                   type="text"
                   {...register("name", {
                     required: {
@@ -69,7 +80,9 @@ const Register = () => {
                 </span>
               </label>
               <label className="register__label">
-                <h2 className="register__label-title">Last Name</h2>
+                <h2 className="register__label-title">
+                  {t("form.labelSurname")}
+                </h2>
                 <input
                   type="text"
                   style={{ border: errors.surname && "#f5222d 1px solid" }}
@@ -88,7 +101,7 @@ const Register = () => {
                     },
                   })}
                   className="register__field"
-                  placeholder="Enter last name"
+                  placeholder={t("form.labelSurname")}
                 />
                 <span className="register__error">
                   {errors.surname && <BiErrorCircle fill="#f5222d" />}
@@ -99,21 +112,17 @@ const Register = () => {
               </label>
             </div>
             <label className="register__label">
-              <h2 className="register__label-title">Login</h2>
+              <h2 className="register__label-title">{t("form.labelLogin")}</h2>
               <input
-                {...register("email", {
+                {...register("login", {
                   required: "Field is required",
                   minLength: {
-                    message: "Minimum 7 characters",
-                    value: 7,
-                  },
-                  pattern: {
-                    message: "Enter correctly your email",
-                    value: /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i,
-                  },
+                    message: "Minimum 2 characters",
+                    value: 2,
+                  }
                 })}
-                type="email"
-                placeholder="Enter email"
+                type="text"
+                placeholder={t("form.labelLogin")}
                 autoComplete="username"
                 className="register__field"
                 style={{ border: errors.login && "#f5222d 1px solid" }}
@@ -126,7 +135,7 @@ const Register = () => {
               </span>
             </label>
             <label className="register__label">
-              <h2 className="register__label-title">Phone</h2>
+              <h2 className="register__label-title">{t("form.labelPhone")}</h2>
 
               <Controller
                 name="phone"
@@ -162,11 +171,12 @@ const Register = () => {
 
             <div className="register__block">
               <label className="register__label">
-                <h2 className="register__label-title">Password</h2>
+                <h2 className="register__label-title">
+                  {t("form.labelPassword")}
+                </h2>
 
-                <div className="register__label-wrapper" >
+                <div className="register__label-wrapper">
                   <input
-                    
                     type={passwordView ? "text" : "password"}
                     className="register__field"
                     style={{ border: errors.password && "#f5222d 1px solid" }}
@@ -178,7 +188,7 @@ const Register = () => {
                         value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,64}$/,
                       },
                     })}
-                    placeholder="Enter password"
+                    placeholder={t("form.labelPassword")}
                   />
                   <span
                     className="register__field-password-icon"
@@ -196,19 +206,22 @@ const Register = () => {
               </label>
 
               <label className="register__label">
-                <h2 className="register__label-title">Password Again</h2>
+                <h2 className="register__label-title">
+                  {t("form.labelPasswordAgain")}
+                </h2>
                 <div className="register__label-wrapper">
                   <input
                     type={passwordView ? "text" : "password"}
                     className="register__field"
-                    placeholder="Enter password"
+                    placeholder={t("form.labelPasswordAgain")}
                     style={{
                       border: errors.confirmPwd && "#f5222d 1px solid",
                     }}
                     {...register("confirmPwd", {
                       required: "Please confirm your password",
                       validate: (value) =>
-                        value === passwordValue || "The passwords do not match!",
+                        value === passwordValue ||
+                        "The passwords do not match!",
                     })}
                   />
                   <span
@@ -225,16 +238,12 @@ const Register = () => {
                   </span>
                 </span>
               </label>
-
-
-
-
-
-
             </div>
             <div className="register__block">
               <label className="register__label">
-                <h2 className="register__label-title">Gender</h2>
+                <h2 className="register__label-title">
+                  {t("form.labelGender")}
+                </h2>
                 <div className="register__gender">
                   <div className="register__gender-item">
                     <input
@@ -246,7 +255,7 @@ const Register = () => {
                       className="register__gender-input"
                       type="radio"
                     />
-                    <label htmlFor="men">Men</label>
+                    <label htmlFor="men">{t("form.radioMan")}</label>
                   </div>
                   <div className="register__gender-item">
                     <input
@@ -258,7 +267,7 @@ const Register = () => {
                       type="radio"
                       value="women"
                     />
-                    <label htmlFor="women">Women</label>
+                    <label htmlFor="women">{t("form.radioWoman")}</label>
                   </div>
                 </div>
                 <span className="register__error">
@@ -272,7 +281,7 @@ const Register = () => {
             {/* <DownLoadBtn images={images} setImages={setImages} t={t} /> */}
             <div className="register__block">
               <label className="register__label">
-                <h2 className="register__label-title">Birthday</h2>
+                <h2 className="register__label-title">{t("form.labelAge")}</h2>
                 <input
                   type="date"
                   {...register("birthday", {
@@ -295,7 +304,7 @@ const Register = () => {
               </label>
 
               <label className="register__label">
-                <h2 className="register__label-title">City</h2>
+                <h2 className="register__label-title">{t("form.labelCity")}</h2>
                 <input
                   type="text"
                   {...register("city", {
@@ -305,7 +314,7 @@ const Register = () => {
                     border: errors.city && "#f5222d 1px solid",
                   }}
                   className="register__field"
-                  placeholder="Enter a city"
+                  placeholder={t("form.labelCity")}
                 />
                 <span className="register__error">
                   {errors.city && <BiErrorCircle fill="#f5222d" />}
@@ -316,11 +325,11 @@ const Register = () => {
               </label>
             </div>
             <button className="register__btn" type="submit">
-              Sign Up
+              {t("form.btn1")}
             </button>
-            <p className="register__text"> If you've already had an account </p>
+            <p className="register__text"> {t("form.question1")} </p>
             <Link className="register__question" to="/login">
-              Login
+              {t("form.btn2")}
             </Link>
           </form>
         </div>

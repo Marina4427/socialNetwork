@@ -13,6 +13,8 @@
 		"labelPassword": "Password",
 		"labelPasswordAgain": "Confirm password",
 		"labelGender": "Gender",
+		"radioMan": "Man",
+		"radioWoman": "Woman",
 		"labelCity": "City",
 		"btn1": "Sign up",
 		"btn2": "Sign in",

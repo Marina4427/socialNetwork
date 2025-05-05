@@ -7,6 +7,7 @@ import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
 import MyProfile from "./pages/MyProfile/MyProfile";
 import './styles/style.scss';
+import './utils/i18n';
 
 function App() {
   return (

@@ -13,6 +13,8 @@
 		"labelPassword": "Пароль",
 		"labelPasswordAgain": "Повторите пароль",
 		"labelGender": "Пол",
+		"radioMan": "Мужчина",
+		"radioWoman": "Женщина",
 		"labelCity": "Город",
 		"btn1": "Зарегистрироваться",
 		"btn2": "Войти",
