@@ -1,0 +1,22 @@
+.aside {
+    width: 15%;
+    padding: 0 20px 20px 0;
+     &__menu {
+       display: flex;
+       flex-direction: column;
+       row-gap: 15px;
+     }
+    &__item {
+  
+      padding: 4px 3px;
+      font-size: 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      column-gap: 10px;
+      align-items: center;
+      &:hover {
+        background: #424242;
+      }
+    }
+  }

@@ -10,6 +10,17 @@
       "city": "Spb",
       "phone": "+7 (454) 545-45-54",
       "id": 2
+    },
+    {
+      "email": "mari@dj.ry",
+      "password": "$2a$10$TVT20Sa2fvyLw87FxVFwneg/0qYxXkNeWWWXoWa2WQLoIxMN/cU5e",
+      "name": "Mari",
+      "surname": "Mari",
+      "gender": "women",
+      "birthday": "2025-05-16",
+      "city": "Spb",
+      "phone": "+7 (234) 564-33-33",
+      "id": 3
     }
   ]
 }
