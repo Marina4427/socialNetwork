@@ -1,6 +1,7 @@
 import HeaderSearch from "./HeaderSearch";
 import { IoNotifications } from "react-icons/io5";
 import { IoIosArrowDown } from "react-icons/io";
+<<<<<<< HEAD
 import SwitchLang from "./SwitchLang/SwitchLang";
 import { Avatar } from "@chakra-ui/react";
 import {
@@ -15,6 +16,10 @@ import { IoMdSettings } from "react-icons/io";
 import { IoMdColorPalette } from "react-icons/io";
 import { MdLanguage } from "react-icons/md";
 import { IoIosLogOut } from "react-icons/io";
+=======
+import SwitchLang from './SwitchLang/SwitchLang';
+import { Avatar } from '@chakra-ui/react'
+>>>>>>> 7e0dc2ea8a76232a807cad12bcc021aeb3673514
 
 const Header = () => {
   return (
@@ -30,6 +35,7 @@ const Header = () => {
             <span className="header__notif">
               <IoNotifications />
             </span>
+<<<<<<< HEAD
 
             <Popover placement="top-end" isLazy >
               <PopoverTrigger>
@@ -84,6 +90,14 @@ const Header = () => {
                 </div>
               </PopoverContent>
             </Popover>
+=======
+            <SwitchLang />
+            <span className="header__user">
+              {/* <img src={noUser} alt="User photo not found" className="header__user-photo"/> */}
+              <Avatar bg='teal.300' name='Marina Fi' src='' />
+              <span className="header__user-icon"><IoIosArrowDown /></span>
+            </span>
+>>>>>>> 7e0dc2ea8a76232a807cad12bcc021aeb3673514
           </div>
         </nav>
       </div>

@@ -17,7 +17,6 @@ const Register = () => {
     register,
     handleSubmit,
     control,
-    reset,
     watch,
     formState: { errors },
   } = useForm({ mode: "onBlur" });
@@ -46,7 +45,6 @@ const Register = () => {
 
   return (
     <div className="register">
-      <div className="container">
         <div className="register__content">
           <form
             className="register__form"
@@ -343,7 +341,6 @@ const Register = () => {
           </form>
         </div>
       </div>
-    </div>
   );
 };
 
