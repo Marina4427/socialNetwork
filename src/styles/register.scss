@@ -5,6 +5,7 @@
   height: 100vh;
   &__title {
     margin-bottom: 20px;
+    font-size: 36px;
     text-align: center;
     font-weight: 900;
     background: linear-gradient(
@@ -68,7 +69,7 @@
       opacity: 0;
     }
     /* для элемента label связанного с .custom-radio */
-    &-inout + label {
+    &-input + label {
       display: inline-flex;
       align-items: center;
       user-select: none;
@@ -185,6 +186,7 @@
     color: rgba(255, 255, 255, 0.6);
     padding-top: 20px;
   }
+  &
   &__question {
     text-align: center;
   }

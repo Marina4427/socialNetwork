@@ -41,18 +41,49 @@
     align-items: center;
     column-gap: 3px;
     cursor: pointer;
-    padding: 15px 5px;
+    padding: 25px 5px!important;
+    background-color: #222!important;
     &-photo{
         border-radius: 50px;
-        width: 32px;
-        height: 32px;
+        width: 32px!important;
+        height: 32px!important;
     }
     &-icon{
         font-size: 20px;
+        color:#fff
     }
   }
   &__notif{
     font-size: 27px;
     cursor: pointer;
+  }
+  &__popover{
+    padding: 20px;
+    &-top{
+      display: flex;
+      column-gap: 10px;
+      align-items: center;
+      padding: 5px;
+      border-radius: 5px;
+    }
+    &-list{
+      display: flex;
+      flex-direction: column;
+      row-gap: 7px;
+      margin-top: 10px;
+    }
+    &-item{
+      display: flex;
+      column-gap: 10px;
+      align-items: center;
+      padding: 5px;
+      cursor: pointer;
+      svg{
+        font-size: 22px;
+      }
+      &:not(:nth-child(3)):hover{
+        background-color: #222;
+      }
+    }
   }
 }

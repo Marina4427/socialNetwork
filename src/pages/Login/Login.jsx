@@ -31,7 +31,7 @@ const Login = () => {
 	}
 	return (
 		<div className='register'>
-			<div className='container'>
+			{/* <div className='container'> */}
 				<div className='register__content'>
 					<form
 						className='register__form'
@@ -40,13 +40,13 @@ const Login = () => {
 					>
 						<h1 className='register__title'>{t('form.title2')}</h1>
 						<label className='register__label'>
-							<h2 className='register__label-title'>{t('form.labelLogin')}</h2>
+							<h2 className='register__label-title'>Email</h2>
 							<input
 								type='text'
 								style={{ border: errors.login && '#f5222d 1px solid' }}
-								{...register('login', {
+								{...register('email', {
 									required: {
-										message: 'Enter a login',
+										message: 'Enter a email',
 										value: true,
 									},
 									maxLength: {
@@ -58,13 +58,13 @@ const Login = () => {
 										value: 3,
 									},
 								})}
-								placeholder={t('form.labelLogin')}
+								placeholder="email"
 								className='register__field'
 							/>
 							<span className='register__error'>
-								{errors.login && <BiErrorCircle fill='#f5222d' />}
+								{errors.email && <BiErrorCircle fill='#f5222d' />}
 								<span className='register__error-text'>
-									{errors.login && errors.login.message}
+									{errors.email && errors.email.message}
 								</span>
 							</span>
 						</label>
@@ -115,7 +115,7 @@ const Login = () => {
 					</form>
 				</div>
 			</div>
-		</div>
+		// </div>
 	)
 }
 

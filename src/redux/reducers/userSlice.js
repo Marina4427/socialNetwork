@@ -1,18 +1,17 @@
 import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
 
-
 const initialState = {
     user: {
-        email : ''
+        email: ''
     }
-}
+  };
 
 const userSlice = createSlice({
     name: 'user',
     initialState,
     reducers : {
         fillUser : (state, action) => {
-            state.user = action.payload
+            state.user = action.payload;
         },
     },
 
