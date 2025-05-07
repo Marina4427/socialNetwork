@@ -3,6 +3,7 @@ import { IoNotifications } from "react-icons/io5";
 import noUser from "../../assets/no-photo.jpg";
 import { IoIosArrowDown } from "react-icons/io";
 import SwitchLang from './SwitchLang/SwitchLang';
+import { Avatar } from '@chakra-ui/react'
 
 const Header = () => {
 
@@ -22,7 +23,8 @@ const Header = () => {
             </span>
             <SwitchLang />
             <span className="header__user">
-              <img src={noUser} alt="User photo not found" className="header__user-photo"/>
+              {/* <img src={noUser} alt="User photo not found" className="header__user-photo"/> */}
+              <Avatar bg='teal.300' name='Marina Fi' src='' />
               <span className="header__user-icon"><IoIosArrowDown /></span>
             </span>
           </div>

@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { Route, Router, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Layout from "./layout/Layout";
 import Home from "./pages/Home/Home";
 import Friends from "./pages/Friends/Friends";
@@ -12,7 +12,7 @@ import NotFound from "./pages/NotFound/NotFound";
 import { useSelector } from "react-redux";
 
 function App() {
-  const {user} = useSelector((store) => store.user)
+  const {user} = useSelector((store) => store.user?.user || { email: '' })
   return (
     <Suspense fallback={"...Loading"}>
       <Routes>
@@ -20,12 +20,12 @@ function App() {
           <Route index element={<Home />} />
           <Route path="friends" element={<Friends />} />
 
-        {!user.email.lenght && <Route path="register" element={<Register />} />}
-        {!user.email.lenght && <Route path="login" element={<Login />} />}
-          
-          
-
-
+          {!user?.email && (
+            <>
+              <Route path="register" element={<Register />} />
+              <Route path="login" element={<Login />} />
+            </>
+          )}
           <Route path="myprofile" element={<MyProfile />} />
           <Route path="*" element={<NotFound />} />
         </Route>

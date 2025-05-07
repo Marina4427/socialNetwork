@@ -17,7 +17,6 @@ const Register = () => {
     register,
     handleSubmit,
     control,
-    reset,
     watch,
     formState: { errors },
   } = useForm({ mode: "onBlur" });
@@ -46,7 +45,6 @@ const Register = () => {
 
   return (
     <div className="register">
-      <div className="container">
         <div className="register__content">
           <form
             className="register__form"
@@ -337,13 +335,12 @@ const Register = () => {
               {t("form.btn1")}
             </button>
             <p className="register__text"> {t("form.question1")} </p>
-            <Link className="register__question" to="/email">
+            <Link className="register__question" to="/login">
               {t("form.btn2")}
             </Link>
           </form>
         </div>
       </div>
-    </div>
   );
 };
 
