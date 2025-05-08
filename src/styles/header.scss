@@ -59,6 +59,7 @@
   }
   &__popover{
     padding: 20px;
+
     &-top{
       display: flex;
       column-gap: 10px;
@@ -86,4 +87,8 @@
       }
     }
   }
+}
+
+.chakra-popover__arrow-positioner {
+  height: 0;
 }

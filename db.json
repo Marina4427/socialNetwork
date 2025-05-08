@@ -8,19 +8,69 @@
       "gender": "women",
       "birthday": "2025-04-28",
       "city": "Spb",
+      "photo": "https://media.istockphoto.com/id/2170147867/ru/%D1%84%D0%BE%D1%82%D0%BE/%D0%B2%D0%B8%D0%B4-%D1%81%D0%B1%D0%BE%D0%BA%D1%83-%D0%BD%D0%B0-%D1%84%D0%BE%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%80%D1%83%D1%8E%D1%89%D0%B5%D0%B3%D0%BE-%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D1%81%D0%B8%D0%B4%D1%8F%D1%89%D0%B5%D0%B3%D0%BE-%D0%BD%D0%B0-%D0%BA%D0%BE%D1%80%D1%82%D0%BE%D1%87%D0%BA%D0%B0%D1%85-%D0%BD%D0%B0-%D0%BF%D0%BE%D0%BB%D0%B5-%D0%B7%D0%B8%D0%BC%D0%BE%D0%B9.jpg?s=612x612&w=0&k=20&c=4SzGaN8C10xIddfcnQcsP96PVTkhjlPeO99BS6tzcng=",
       "phone": "+7 (454) 545-45-54",
       "id": 2
     },
     {
-      "email": "mari@dj.ry",
+      "email": "marina@ya.ru",
       "password": "$2a$10$TVT20Sa2fvyLw87FxVFwneg/0qYxXkNeWWWXoWa2WQLoIxMN/cU5e",
-      "name": "Mari",
-      "surname": "Mari",
+      "name": "Marina",
+      "surname": "Mi",
       "gender": "women",
       "birthday": "2025-05-16",
       "city": "Spb",
+      "photo":  "https://media.istockphoto.com/id/1326090973/ru/%D1%84%D0%BE%D1%82%D0%BE/%D0%BD%D0%B0%D1%81%D0%BB%D0%B0%D0%B6%D0%B4%D0%B0%D1%8F%D1%81%D1%8C-%D1%81%D0%B2%D0%B5%D0%B6%D0%B5%D0%B9-%D0%B2%D0%B5%D1%81%D0%B5%D0%BD%D0%BD%D0%B5%D0%B9-%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D0%BE%D0%B9.jpg?s=612x612&w=0&k=20&c=toiiK9-_DsaQCS2njTZAbaYNmtI-vbXTJuy6ukvTQMw=",,
       "phone": "+7 (234) 564-33-33",
       "id": 3
+    },
+    {
+      "email": "mari@ya.tu",
+      "password": "$2a$10$S8kPfKiBGS0RTACA2gR/..OxRY2D/Gc2qdQIhHJFneventADc225y",
+      "name": "Michael",
+      "surname": "Marn",
+      "gender": "man",
+      "birthday": "2025-04-28",
+      "city": "Spb",
+      "photo": "https://media.istockphoto.com/id/1896988382/ru/%D1%84%D0%BE%D1%82%D0%BE/businessman-contemplating-on-the-office.jpg?s=612x612&w=0&k=20&c=E8Uw4aC3NkRky4etRgpcYGM49SyEXVvurtgVHils304=",
+      "phone": "+7 (123) 456-78-96",
+      "id": 4
+    },
+    {
+      "email": "mari@ya.ru",
+      "password": "$2a$10$XZz0rL14KnfjcEU8OzsOh.f6Nmb1tPoajEDL7zfTa5QBra1g1J1be",
+      "name": "Sergey",
+      "surname": "Bax",
+      "gender": "man",
+      "birthday": "2025-04-29",
+      "city": "Msc",
+      "photo":"https://media.istockphoto.com/id/1296158947/ru/%D1%84%D0%BE%D1%82%D0%BE/%D0%BF%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82-%D1%82%D0%B2%D0%BE%D1%80%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B3%D0%BE-%D0%BC%D0%BE%D0%B4%D0%BD%D0%BE%D0%B3%D0%BE-%D1%87%D0%B5%D1%80%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B0%D1%84%D1%80%D0%B8%D0%BA%D0%B0%D0%BD%D1%81%D0%BA%D0%BE%D0%B3%D0%BE-%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD%D0%B5%D1%80%D0%B0-%D0%BC%D1%83%D0%B6%D1%87%D0%B8%D0%BD%D1%8B-%D1%81%D0%BC%D0%B5%D0%B5%D1%82%D1%81%D1%8F.jpg?s=612x612&w=0&k=20&c=P_EFxbJASiELO2ptc6I-_u3i96Qseujp3QHRGzWN-kc=",
+      "phone": "+7 (456) 232-22-22",
+      "id": 5
+    },
+    {
+      "email": "anton@ya.ru",
+      "password": "$2a$10$AF5mjhavhjFPZUhXbeWfKuwZSFO/KhCQacOgy9W0cs.pUqYhMpyYu",
+      "name": "Antonina",
+      "surname": "Van",
+      "gender": "women",
+      "birthday": "2025-04-30",
+      "city": "spb",
+      "photo": "https://media.istockphoto.com/id/694715636/ru/%D1%84%D0%BE%D1%82%D0%BE/%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D0%B2%D1%83%D0%BC%D0%B5%D0%BD-%D1%81-%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E-%D1%86%D0%B8%D1%84%D1%80%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE-%D0%BF%D0%BB%D0%B0%D0%BD%D1%88%D0%B5%D1%82%D0%B0-%D0%B2-%D0%BE%D1%84%D0%B8%D1%81%D0%B5.jpg?s=612x612&w=0&k=20&c=WPko0NhPzvSIHrf9t4znbZq1eZYB_04Ulyx_ClDjf28=",
+      "phone": "+7 (111) 111-11-11",
+      "id": 6
+    },
+    {
+      "email": "alen@ya.ru",
+      "password": "$2a$10$dFTa8pDkSDNAXw9Gtk.sZOPYiur6m.VsayzWGmgzOcrOW.mTtU0hS",
+      "name": "Olesya",
+      "surname": "Alen",
+      "gender": "women",
+      "birthday": "2025-04-28",
+      "city": "Msc",
+      "photo": "https://media.istockphoto.com/id/2173320839/ru/%D1%84%D0%BE%D1%82%D0%BE/portrait-of-young-woman-standing-against-white-background.jpg?s=612x612&w=0&k=20&c=vr85-cgkF2BW8oJ0F6jtIZAIy97-F4OgCSSmE3m0zpk=" ,
+      "phone": "+7 (789) 456-12-35",
+      "id": 7
     }
   ]
 }

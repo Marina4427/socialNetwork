@@ -11,9 +11,11 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
+import findUsersReducer from "./reducers/findUsersSlice"; 
 
 const rootReducer = combineReducers({
   user: userReducer,
+  findUsers: findUsersReducer,
 });
 
 const persistConfig = {

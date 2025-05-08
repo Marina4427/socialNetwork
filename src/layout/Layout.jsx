@@ -13,7 +13,7 @@ const Layout = () => {
       <main>
         {/* <div className="container"> */}
           <div className="content">
-            {location.pathname !== '/register' && location.pathname !== '/login' ? <HomeAside /> : '' }
+            {/* {location.pathname !== '/register' && location.pathname !== '/login' ? <HomeAside /> : '' } */}
             <Outlet />
           </div>
         {/* </div> */}

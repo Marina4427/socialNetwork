@@ -21,5 +21,12 @@
 		"question2": "Don't have an account?",
 		"photoAddBtn": "Upload picture",
 		"photoDelBtn": "Delete picture"
+	},
+	"login": {
+		"errMessage": "This account does not exist."
+	}, 
+	"register" : {
+		"errMessage" : "User is already registered."
 	}
+
 }

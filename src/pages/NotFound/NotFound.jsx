@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
-import { Navigate, useLocation } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 const NotFound = () => {
-  const {user} = useSelector((store) => store.user)
-  if ( !user.email.length) {
+  const {user} = useSelector((store) => store.user.user)
+  if ( !user?.email) {
     return (
       <Navigate to ='/register' />
     );

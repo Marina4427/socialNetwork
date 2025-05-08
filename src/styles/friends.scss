@@ -1,0 +1,85 @@
+.friends {
+  // width: 85%;
+  &__row {
+    display: flex;
+    // column-gap: 30px;
+    color: white;
+  }
+  &__follow {
+    width: 60%;
+    background: #222222;
+    border-radius: 0 0 20px 20px ;
+    border: 1px solid #3e4042;
+    padding: 30px;
+  }
+  &__title {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  &__search {
+    position: relative;
+    margin-bottom: 30px;
+    &-input {
+      width: 100%;
+      height: 45px;
+      border-radius: 5px;
+      padding-left: 15px;
+      background: transparent;
+      border:  1px solid #3e4042;
+    }
+    &-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: #8C8C8C;
+      border: 1px solid #3e4042;
+      border-radius: 0 5px 5px 0;
+      height: 45px;
+      padding: 0 20px;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  &__card {
+    width: calc(33% - 20px);
+    &-img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    &-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &-link {
+      font-size: 14px;
+      color: #0050B3;
+    }
+    &-friends {
+      color: #8C8C8C;
+      font-size: 12px;
+    }
+    &-btn {
+      background: transparent;
+      border: none;
+      font-size: 22px;
+      color: #0050B0;
+    }
+  }
+  &__filter {
+    width: 40%;
+    background: #222222;
+    border-radius: 0 0 20px 20px;
+    border: 1px solid #3e4042;
+    padding: 30px;
+  }
+}

@@ -1,7 +1,6 @@
 import HeaderSearch from "./HeaderSearch";
 import { IoNotifications } from "react-icons/io5";
 import { IoIosArrowDown } from "react-icons/io";
-<<<<<<< HEAD
 import SwitchLang from "./SwitchLang/SwitchLang";
 import { Avatar } from "@chakra-ui/react";
 import {
@@ -16,12 +15,14 @@ import { IoMdSettings } from "react-icons/io";
 import { IoMdColorPalette } from "react-icons/io";
 import { MdLanguage } from "react-icons/md";
 import { IoIosLogOut } from "react-icons/io";
-=======
-import SwitchLang from './SwitchLang/SwitchLang';
-import { Avatar } from '@chakra-ui/react'
->>>>>>> 7e0dc2ea8a76232a807cad12bcc021aeb3673514
+import { useDispatch, useSelector } from "react-redux";
+import { logOutUser } from "../../redux/reducers/userSlice";
 
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const {user} = useSelector((store) => store.user.user)
+
   return (
     <header className="header">
       <div className="container">
@@ -35,16 +36,14 @@ const Header = () => {
             <span className="header__notif">
               <IoNotifications />
             </span>
-<<<<<<< HEAD
-
-            <Popover placement="top-end" isLazy >
+            <Popover placement="top-end" isLazy>
               <PopoverTrigger>
                 <Button className="header__user">
                   <Avatar
                     className="header__user-photo"
                     bg="teal.300"
-                    name="Marina Fi"
-                    src=""
+                    name={`${user.name} ${user.surname}`}
+                    src={user.photo}
                   />
                   <span className="header__user-icon">
                     <IoIosArrowDown />
@@ -52,20 +51,28 @@ const Header = () => {
                 </Button>
               </PopoverTrigger>
 
-              <PopoverContent bg="black" className="header__popover-content">
+              <PopoverContent
+                sx={{
+                  "[data-popper-arrow]": {
+                    display: "none !important",
+                  },
+                }}
+                bg="black"
+                className="header__popover-content"
+              >
                 <PopoverArrow />
 
                 <div className="header__popover">
                   <div className="header__popover-top">
                     <Avatar
                       bg="teal.300"
-                      name="Marina Fi"
-                      src=""
+                      name={`${user.name} ${user.surname}`}
+                      src={user.photo}
                       className="header__popover-img"
                     />
                     <div>
-                      <h3 className="header__popover-title">Marina Fill</h3>
-                      <p className="header__popover-num"> +952-123-45-69</p>
+                      <h3 className="header__popover-title">{`${user.name} ${user.surname}`}</h3>
+                      <p className="header__popover-num"> {user.phone}</p>
                     </div>
                   </div>
                   <ul className="header__popover-list">
@@ -82,7 +89,7 @@ const Header = () => {
                       <SwitchLang />
                     </li>
 
-                    <li className="header__popover-item">
+                    <li className="header__popover-item" onClick={() => dispatch(logOutUser())}>
                       <Icon as={IoIosLogOut} />
                       Выйти
                     </li>
@@ -90,14 +97,6 @@ const Header = () => {
                 </div>
               </PopoverContent>
             </Popover>
-=======
-            <SwitchLang />
-            <span className="header__user">
-              {/* <img src={noUser} alt="User photo not found" className="header__user-photo"/> */}
-              <Avatar bg='teal.300' name='Marina Fi' src='' />
-              <span className="header__user-icon"><IoIosArrowDown /></span>
-            </span>
->>>>>>> 7e0dc2ea8a76232a807cad12bcc021aeb3673514
           </div>
         </nav>
       </div>
