@@ -1,15 +1,16 @@
 .aside {
-    width: 15%;
-    padding: 20px 20px 20px 0;
+    padding: 20px;
+    background-color: $background;
+    border: 1px solid $border_color;
      &__menu {
        display: flex;
        flex-direction: column;
        row-gap: 10px;
      }
     &__item {
-  
+      white-space: nowrap;
       padding: 4px 3px;
-      font-size: 20px;
+      font-size: 16px;
       border-radius: 4px;
       cursor: pointer;
       display: flex;

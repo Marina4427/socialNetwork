@@ -5,7 +5,13 @@ export const findAllUsers = createAsyncThunk(
   "findUsers/findAllUsers",
   async (filter, { rejectWithValue }) => {
     try {
-      const res = await axios.get(`/users?email_ne=${filter.email}`);
+      const res = await axios.get('/users', {
+        params: {
+          email_ne: filter.email,
+          q: filter.search   
+        }
+      });
+
       if (res.status !== 200) {
         throw new Error('Error');
       }
@@ -51,4 +57,6 @@ const findUsersSlice = createSlice({
   },
 });
 
+export const {changeSearch}=findUsersSlice.actions;
 export default findUsersSlice.reducer;
+

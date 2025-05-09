@@ -8,6 +8,7 @@ import { fillUser } from "../../redux/reducers/userSlice";
 import axios from "../../utils/axios";
 import { useToast } from "@chakra-ui/react";
 
+
 const Login = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
@@ -21,8 +22,13 @@ const Login = () => {
   } = useForm({ mode: "onTouched" });
 
   const loginUser = (data) => {
+    const normalizedData = {
+      ...data,
+      email: data.email.trim().toLowerCase(), // нормализация email
+    };
+  
     axios
-      .post("http://localhost:4444/login", data)
+      .post("http://localhost:4444/login", normalizedData)
       .then(({ data }) => {
         dispatch(fillUser(data));
         navigate("/");

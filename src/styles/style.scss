@@ -10,6 +10,8 @@
   transition: 0.3s all;
   font-family: "Open Sans", sans-serif;
   font-style: normal;
+  color: #fff;
+  
 }
 
 a, a:link, a:visited  {
@@ -32,6 +34,9 @@ $black: #181818;
 $gray: #8c8c8c;
 $red: #f5222d;
 
+$background: #222;
+$border_color: #3e4042;
+
 @mixin text($fw, $lh, $fz, $col) {
   font-weight: $fw;
   @if $lh > 0 {
@@ -45,6 +50,10 @@ $red: #f5222d;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+.row {
+  display: flex;
 }
 
 @import "header";

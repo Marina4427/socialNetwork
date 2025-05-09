@@ -12,8 +12,8 @@ const Layout = () => {
       <Header />
       <main>
         {/* <div className="container"> */}
-          <div className="content">
-            {/* {location.pathname !== '/register' && location.pathname !== '/login' ? <HomeAside /> : '' } */}
+          <div className="content row">
+            {location.pathname !== '/register' && location.pathname !== '/login' ? <HomeAside /> : '' }
             <Outlet />
           </div>
         {/* </div> */}
