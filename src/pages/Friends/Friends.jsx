@@ -1,27 +1,79 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import { Image } from "@chakra-ui/react";
+import { Image, useToast } from "@chakra-ui/react";
 import { findAllUsers } from "../../redux/reducers/findUsersSlice";
-import {RiUserAddLine} from "react-icons/ri";
+import { RiUserAddLine } from "react-icons/ri";
 import { changeSearch } from "../../redux/reducers/findUsersSlice";
-
+import { MdOutlineDone } from "react-icons/md";
+import axios from "../../utils/axios";
+import { fillUser } from "../../redux/reducers/userSlice";
 
 const Friends = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((store) => store.user.user);
   const { data, filter } = useSelector((store) => store.findUsers);
-  const [search, setSearch] = useState( filter.search || '' )
+  const [search, setSearch] = useState(filter.search || "");
+  const toast = useToast();
 
- 
   useEffect(() => {
-    if (user?.id) {
-      dispatch(findAllUsers({ email: user.email, search }))
-      dispatch(changeSearch(search))
+    if (user?.email) {
+      dispatch(findAllUsers({ email: user.email, search }));
+      dispatch(changeSearch(search));
     }
   }, [search]);
 
+  const sendRequest = async (receiverId) => {
+    try {
+      const senderUser = await axios.get(`/users/${user.id}`);
+      const existingRequests = senderUser.data.friendRequests || [];
 
+      if (existingRequests.includes(receiverId)) {
+        toast({
+          title: "Запрос уже отправлен",
+          status: "info",
+          duration: 3000,
+          isClosable: true,
+          position: "top",
+        });
+        return;
+      }
+
+      await axios
+        .patch(`/users/${user.id}`, {
+          friendRequests: [...existingRequests, receiverId],
+        })
+        .then(({ data }) => dispatch(fillUser(data)));
+
+      const receiverRes = await axios.get(`/users/${receiverId}`);
+      const notifications = receiverRes.data.notifications || [];
+      const newNotification = {
+        type: "friend_request",
+        from: user.id,
+      };
+
+      await axios.patch(`/users/${receiverId}`, {
+        notifications: [...notifications, newNotification],
+      });
+
+      toast({
+        title: "Запрос отправлен",
+        status: "success",
+        duration: 3000,
+        isClosable: true,
+        position: "top",
+      });
+    } catch (err) {
+      console.error(err);
+      toast({
+        title: "Ошибка при отправке запроса",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+        position: "top",
+      });
+    }
+  };
 
   return (
     <section className="friends">
@@ -59,9 +111,17 @@ const Friends = () => {
                     </a>
                     <p className="friends__card-friends">Нет общих друзей</p>
                   </div>
-                  <button className="friends__card-btn">
-                  <RiUserAddLine />
-                  </button>
+
+                  {user.friendRequests?.includes(item.id) ? (
+                    ""
+                  ) : (
+                    <button
+                      className="friends__card-btn"
+                      onClick={() => sendRequest(item.id)}
+                    >
+                      <RiUserAddLine />
+                    </button>
+                  )}
                 </div>
               </div>
             ))}

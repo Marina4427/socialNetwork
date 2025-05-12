@@ -37,7 +37,7 @@ const Register = () => {
     const { passwordAgain, ...userData } = data;
 
     axios
-      .post("http://localhost:4444/register", userData)
+      .post('/register', userData)
       .then(({ data }) => {
         dispatch(fillUser(data));
         navigate("/");

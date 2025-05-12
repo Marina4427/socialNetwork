@@ -28,7 +28,7 @@ const Login = () => {
     };
   
     axios
-      .post("http://localhost:4444/login", normalizedData)
+      .post('/login', normalizedData)
       .then(({ data }) => {
         dispatch(fillUser(data));
         navigate("/");

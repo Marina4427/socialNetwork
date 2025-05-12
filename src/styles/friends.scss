@@ -1,9 +1,11 @@
 .friends {
-  // width: 85%;
+  width: 100%;
+  min-height: 100hv;
   &__row {
     display: flex;
     // column-gap: 30px;
     color: white;
+    min-height: 100vh;
   }
   &__follow {
     width: 60%;
