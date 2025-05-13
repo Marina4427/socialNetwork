@@ -35,7 +35,7 @@ $gray: #8c8c8c;
 $red: #f5222d;
 
 $background: #222;
-$border_color: #3e4042;
+$border: #3e4042;
 
 @mixin text($fw, $lh, $fz, $col) {
   font-weight: $fw;
@@ -62,3 +62,4 @@ $border_color: #3e4042;
 @import "aside";
 @import "profile";
 @import "friends";
+@import "notification";

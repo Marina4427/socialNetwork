@@ -17,11 +17,12 @@ import { MdLanguage } from "react-icons/md";
 import { IoIosLogOut } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 import { logOutUser } from "../../redux/reducers/userSlice";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const dispatch = useDispatch();
-
-  const {user} = useSelector((store) => store.user.user)
+  const navigate = useNavigate();
+  const user = useSelector((store) => store.user?.user)
 
   return (
     <header className="header">
@@ -33,7 +34,10 @@ const Header = () => {
           </div>
 
           <div className="header__right">
-            <span className="header__notif">
+                       
+            <span 
+            onClick={() => navigate('/notifications')}
+            className="header__notif">
               <IoNotifications />
             </span>
             <Popover placement="top-end" isLazy>

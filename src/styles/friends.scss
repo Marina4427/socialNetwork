@@ -26,14 +26,14 @@
       border-radius: 5px;
       padding-left: 15px;
       background: transparent;
-      border:  1px solid #3e4042;
+      border:  1px solid $border;
     }
     &-btn {
       position: absolute;
       top: 0;
       right: 0;
       background: #8C8C8C;
-      border: 1px solid #3e4042;
+      border: 1px solid $border;
       border-radius: 0 5px 5px 0;
       height: 45px;
       padding: 0 20px;

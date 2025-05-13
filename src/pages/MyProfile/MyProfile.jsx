@@ -11,7 +11,7 @@ import { IoCameraOutline } from "react-icons/io5";
 
 const MyProfile = () => {
     
-    const {user} = useSelector((store) => store.user.user);
+    const user = useSelector((store) => store.user.user);
     const [post, setPost] = useState('')
 
     return (

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "../../utils/axios";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm, Controller } from "react-hook-form";
 import { IMaskInput } from "react-imask";
@@ -10,6 +9,7 @@ import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { fillUser } from "../../redux/reducers/userSlice";
 import { useToast } from "@chakra-ui/react";
+import axios from "../../utils/axios";
 
 const Register = () => {
   const { t } = useTranslation();
@@ -39,7 +39,7 @@ const Register = () => {
     axios
       .post('/register', userData)
       .then(({ data }) => {
-        dispatch(fillUser(data));
+        dispatch(fillUser(data.user));
         navigate("/");
       })
       .catch(err => {

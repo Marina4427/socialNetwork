@@ -10,7 +10,7 @@ import NotFound from "./pages/NotFound/NotFound";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
-  const {user} = useSelector((store) => store.user.user);
+  const user = useSelector((store) => store.user?.user);
 
   return (
     <Suspense fallback={"...Loading"}>

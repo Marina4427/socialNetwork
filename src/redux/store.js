@@ -1,6 +1,6 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import userReducer from "./reducers/userSlice";
-import friendsReducer from './reducers/friendsSlice';
+import notifications from "./reducers/notificationSlice"
 import storage from "redux-persist/lib/storage";
 import {
   persistStore,
@@ -17,7 +17,7 @@ import findUsersReducer from "./reducers/findUsersSlice";
 const rootReducer = combineReducers({
   user: userReducer,
   findUsers: findUsersReducer,
-  friends: friendsReducer,
+  notifications
 });
 
 const persistConfig = {

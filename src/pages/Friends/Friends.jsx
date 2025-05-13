@@ -9,9 +9,11 @@ import { MdOutlineDone } from "react-icons/md";
 import axios from "../../utils/axios";
 import { fillUser } from "../../redux/reducers/userSlice";
 
+
 const Friends = () => {
   const dispatch = useDispatch();
-  const { user } = useSelector((store) => store.user.user);
+  const user = useSelector((store) => store.user.user);
+
   const { data, filter } = useSelector((store) => store.findUsers);
   const [search, setSearch] = useState(filter.search || "");
   const toast = useToast();
@@ -43,7 +45,11 @@ const Friends = () => {
         .patch(`/users/${user.id}`, {
           friendRequests: [...existingRequests, receiverId],
         })
-        .then(({ data }) => dispatch(fillUser(data)));
+        .then((res) => {
+        dispatch(fillUser(res.data));
+    });
+        
+
 
       const receiverRes = await axios.get(`/users/${receiverId}`);
       const notifications = receiverRes.data.notifications || [];
@@ -52,7 +58,7 @@ const Friends = () => {
         from: user.id,
       };
 
-      await axios.patch(`/users/${receiverId}`, {
+      await axios.patch(`http://localhost:4444/users/${receiverId}`, {
         notifications: [...notifications, newNotification],
       });
 
@@ -113,7 +119,7 @@ const Friends = () => {
                   </div>
 
                   {user.friendRequests?.includes(item.id) ? (
-                    ""
+                    <MdOutlineDone />
                   ) : (
                     <button
                       className="friends__card-btn"
@@ -127,7 +133,12 @@ const Friends = () => {
             ))}
           </div>
         </div>
-        <div className="friends__filter"></div>
+        <div className="friends__filter">
+
+
+
+
+        </div>
       </div>
     </section>
   );

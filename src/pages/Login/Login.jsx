@@ -30,7 +30,7 @@ const Login = () => {
     axios
       .post('/login', normalizedData)
       .then(({ data }) => {
-        dispatch(fillUser(data));
+        dispatch(fillUser(data.user));
         navigate("/");
       })
       .catch(err => {
