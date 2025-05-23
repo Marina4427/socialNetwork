@@ -5,7 +5,7 @@ const NotFound = () => {
   const user = useSelector((store) => store.user?.user);
   if ( !user?.email) {
     return (
-      <Navigate to ='/register' />
+      <Navigate to ='/login' />
     );
   }
 

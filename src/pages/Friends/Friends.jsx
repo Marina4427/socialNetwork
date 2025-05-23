@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import { Image, useToast } from "@chakra-ui/react";
+import { Avatar, Image, useToast } from "@chakra-ui/react";
 import { findAllUsers } from "../../redux/reducers/findUsersSlice";
 import { RiUserAddLine } from "react-icons/ri";
 import { changeSearch } from "../../redux/reducers/findUsersSlice";
 import { MdOutlineDone } from "react-icons/md";
 import axios from "../../utils/axios";
 import { fillUser } from "../../redux/reducers/userSlice";
-
 
 const Friends = () => {
   const dispatch = useDispatch();
@@ -17,6 +16,7 @@ const Friends = () => {
   const { data, filter } = useSelector((store) => store.findUsers);
   const [search, setSearch] = useState(filter.search || "");
   const toast = useToast();
+  const [friendsData, setFriendsData] = useState([]);
 
   useEffect(() => {
     if (user?.email) {
@@ -46,10 +46,8 @@ const Friends = () => {
           friendRequests: [...existingRequests, receiverId],
         })
         .then((res) => {
-        dispatch(fillUser(res.data));
-    });
-        
-
+          dispatch(fillUser(res.data));
+        });
 
       const receiverRes = await axios.get(`/users/${receiverId}`);
       const notifications = receiverRes.data.notifications || [];
@@ -81,10 +79,55 @@ const Friends = () => {
     }
   };
 
+  useEffect(() => {
+  const fetchFriends = async () => {
+    try {
+      if (!user.friends || user.friends.length === 0) return;
+      const responses = await Promise.all(
+        user.friends.map((id) => axios.get(`/users/${id}`))
+      );
+
+      const friends = responses.map((res) => res.data);
+      setFriendsData(friends);
+    } catch (error) {
+      console.error("Ошибка при загрузке друзей:", error);
+    }
+  };
+
+  fetchFriends();
+}, [user.friends]);
+
   return (
     <section className="friends">
       <div className="friends__row">
         <div className="friends__follow">
+          <h2 className="friends__title">My friends</h2>
+          {
+          
+          friendsData.length > 0 ? (
+            friendsData.map((item, idx) => (
+              <div key={idx} className="friends__list-item">
+                <Avatar
+                  alt="photo"
+                  className="friends__card-img"
+                  src={item.photo}
+                  fallbackSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD5CysVsiTDenCVvLYM6u2ElQnZST7jjmFdw&s"
+                />
+                {/* <div className="friends__card-bottom"> */}
+                  <div className="friends__card-name">
+                    <a href="#!" className="friends__card-link">
+                      {item.name} {item.surname}
+                    </a>
+                  </div>
+                </div>
+              // </div>
+            ))
+          ) : (
+            <p>Найди своих друзей</p>
+          )}
+        </div>
+
+        <div className="friends__filter">
           <div className="friends__top">
             <h2 className="friends__title">Search friends</h2>
           </div>
@@ -132,12 +175,6 @@ const Friends = () => {
               </div>
             ))}
           </div>
-        </div>
-        <div className="friends__filter">
-
-
-
-
         </div>
       </div>
     </section>

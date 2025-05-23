@@ -23,6 +23,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((store) => store.user?.user)
+ 
 
   return (
     <header className="header">
@@ -34,12 +35,21 @@ const Header = () => {
           </div>
 
           <div className="header__right">
-                       
+         
             <span 
             onClick={() => navigate('/notifications')}
             className="header__notif">
               <IoNotifications />
-            </span>
+
+               { 
+              
+               user.notifications?.length ? (<>
+               
+               <p className="header__notif-counter"> {user.notifications.length}</p>
+               
+               </>) : ""}
+            </span>           
+            
             <Popover placement="top-end" isLazy>
               <PopoverTrigger>
                 <Button className="header__user">

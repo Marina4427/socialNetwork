@@ -2,7 +2,9 @@
   background: #18191a;
   color: #e4e6eb;
   height: 200vh;
-  padding: 40px 0;
+  padding: 40px 20px;
+  display: flex;
+  width: 100%;
   &__emoji-block {
     transition: 1s !important;
     width: 350px;
@@ -130,10 +132,19 @@
     &-change {
       padding: 7px;
       margin-right: 25px;
-     
       border-radius: 8px;
       border: none;
       font-size: 22px;
     }
+  }
+  &__news{
+    width: 50%;
+    background-color: #3e4042;
+    
+    padding: 40px;
+    margin: 0 auto;
+  }
+  &__title{
+    font-size: 20px;
   }
 }

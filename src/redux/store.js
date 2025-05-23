@@ -13,11 +13,14 @@ import {
   REGISTER,
 } from "redux-persist";
 import findUsersReducer from "./reducers/findUsersSlice"; 
+import { requestsSlice } from "./reducers/requestSlice";
+
 
 const rootReducer = combineReducers({
   user: userReducer,
   findUsers: findUsersReducer,
-  notifications
+  notifications,
+  [requestsSlice.reducerPath]: requestsSlice.reducer,
 });
 
 const persistConfig = {
@@ -34,7 +37,7 @@ const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }),
+    }).concat(requestsSlice.middleware),
 });
 
 export const persistor = persistStore(store);

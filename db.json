@@ -35,7 +35,6 @@
         8,
         6,
         9,
-        10,
         11
       ],
       "notifications": [
@@ -46,6 +45,28 @@
         {
           "type": "friend_request",
           "from": 10
+        },
+        {
+          "type": "friend_request",
+          "from": 5
+        }
+      ],
+      "photos": [
+        {
+          "url": "http://localhost:3001/uploads/2d0629ac-72c6-443b-b2e2-512c7d7399ca-44.jpeg",
+          "description": ""
+        },
+        {
+          "url": "http://localhost:3001/uploads/67a28544-6d7b-43e8-b2b0-92664d2a25c4-223.jpeg",
+          "description": ""
+        },
+        {
+          "url": "http://localhost:3001/uploads/9257dc34-dcab-412e-aed2-55518b60a2ab-22.jpeg",
+          "description": ""
+        },
+        {
+          "url": "http://localhost:3001/uploads/9c311efc-0ddf-410e-985d-f8448894fc58.jpg",
+          "description": "May"
         }
       ]
     },
@@ -64,10 +85,20 @@
         3
       ],
       "friendRequests": [
-        5,
-        3
+        5
       ],
-      "notifications": []
+      "notifications": [
+        {
+          "type": "friend_request",
+          "from": 5
+        }
+      ],
+      "photos": [
+        {
+          "url": "http://localhost:3001/uploads/491df60f-a7af-4f8a-b909-a604014d2d31.jpg",
+          "description": ""
+        }
+      ]
     },
     {
       "email": "mari@ya.ru",
@@ -81,7 +112,10 @@
       "phone": "+7 (456) 232-22-22",
       "id": 5,
       "friends": [],
-      "friendRequests": [],
+      "friendRequests": [
+        3,
+        4
+      ],
       "notifications": [
         {
           "type": "friend_request",
@@ -91,7 +125,8 @@
           "type": "friend_request",
           "from": 4
         }
-      ]
+      ],
+      "photos": []
     },
     {
       "email": "anton@ya.ru",
@@ -111,7 +146,8 @@
           "type": "friend_request",
           "from": 3
         }
-      ]
+      ],
+      "photos": []
     },
     {
       "email": "alen@ya.ru",

@@ -23,14 +23,6 @@ export const getAllNotification = createAsyncThunk(
 )
 
 
-
-
-
-
-
-
-
-
 const notifications = createSlice({
   name: 'notifications',
   initialState: {

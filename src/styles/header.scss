@@ -1,23 +1,32 @@
 .header {
-  color:#fff;
+  color: #fff;
   background: #222222;
+  &__title{
+    font-size: 20px;
+    font-weight: 700;
+    padding-block: 15px;
+  }
   &__nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+
   &__left {
     display: flex;
     align-items: center;
     column-gap: 35px;
   }
+
   &__right {
     display: flex;
     align-items: center;
     column-gap: 20px;
   }
+
   &__search {
     position: relative;
+
     &-icon {
       position: absolute;
       top: 50%;
@@ -36,53 +45,72 @@
       padding-left: 35px;
     }
   }
-  &__user{
+
+  &__user {
     display: flex;
     align-items: center;
     column-gap: 3px;
     cursor: pointer;
-    padding: 25px 5px!important;
-    background-color: #222!important;
-    &-photo{
-        border-radius: 50px;
-        width: 32px!important;
-        height: 32px!important;
+    padding: 25px 5px !important;
+    background-color: #222 !important;
+
+    &-photo {
+      border-radius: 50px;
+      width: 32px !important;
+      height: 32px !important;
     }
-    &-icon{
-        font-size: 20px;
-        color:#fff
+    &-icon {
+      font-size: 20px;
+      color: #fff
     }
   }
-  &__notif{
+
+  &__notif {
     font-size: 27px;
     cursor: pointer;
+    position: relative;
+
+    &-counter {
+      position: absolute;
+      top: -8px;
+      right: -4px;
+      border-radius: 25px;
+      background-color: red;
+      font-size: 16px;
+      padding-inline: 3px;
+    }
   }
-  &__popover{
+
+  &__popover {
     padding: 20px;
 
-    &-top{
+    &-top {
       display: flex;
       column-gap: 10px;
       align-items: center;
       padding: 5px;
       border-radius: 5px;
     }
-    &-list{
+
+    &-list {
       display: flex;
       flex-direction: column;
       row-gap: 7px;
       margin-top: 10px;
     }
-    &-item{
+
+    &-item {
       display: flex;
       column-gap: 10px;
       align-items: center;
       padding: 5px;
       cursor: pointer;
-      svg{
+
+      svg {
         font-size: 22px;
       }
-      &:not(:nth-child(3)):hover{
+
+      &:not(:nth-child(3)):hover {
         background-color: #222;
       }
     }
