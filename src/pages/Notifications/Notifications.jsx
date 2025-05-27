@@ -20,9 +20,6 @@ const Notifications = () => {
   const acceptFriends = async (id) => {
     try {
       const { data: senderUser } = await axios.get(`/users/${id}`);
-
-      // const updatedSender = await
-
       axios.patch(`/users/${id}`, {
         friendRequests: senderUser.friendRequests.filter(
           (id) => id !== user.id
@@ -60,11 +57,9 @@ const Notifications = () => {
 
   const rejectFriends = async (id) => {
     try {      
-      // Удаляем friendRequest у отправителя
       axios.patch(`/users/${id}`, {
         friendRequests: id.friendRequests.filter((id) => id !== user.id),
       });
-      // Удаляем уведомление у текущего пользователя
       const updatedNotifications = user.notifications.filter(
         (n) => n.from !== id
       );

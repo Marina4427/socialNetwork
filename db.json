@@ -68,6 +68,48 @@
           "url": "http://localhost:3001/uploads/9c311efc-0ddf-410e-985d-f8448894fc58.jpg",
           "description": "May"
         }
+      ],
+      "posts": [
+        {
+          "content": "мавпимва😗👶🧒👃💪",
+          "createdAt": "2025-05-27T12:54:58.786Z",
+          "likes": [],
+          "comments": [],
+          "id": "e4a29671-7f03-4ce6-bd1c-f5eab097ef0e",
+          "autor": 3
+        },
+        {
+          "content": "кцуецкецй",
+          "createdAt": "2025-05-27T12:55:02.681Z",
+          "likes": [],
+          "comments": [],
+          "id": "0891fb28-dc62-4ad7-9eca-263170672d70",
+          "autor": 3
+        },
+        {
+          "content": "цуецецеуке",
+          "createdAt": "2025-05-27T12:55:05.352Z",
+          "likes": [],
+          "comments": [],
+          "id": "1972e1e1-9ebc-4b32-a091-06b732fefb9f",
+          "autor": 3
+        },
+        {
+          "content": "укцкцукеу🏕️🧱👷",
+          "createdAt": "2025-05-27T12:55:43.126Z",
+          "likes": [],
+          "comments": [],
+          "id": "0adecfed-745b-4086-8944-74e606627d9b",
+          "autor": 3
+        },
+        {
+          "content": "ertertge👶💚💙💜❤️‍🔥❤️‍🩹💓❤️‍🔥",
+          "createdAt": "2025-05-27T14:08:12.458Z",
+          "likes": [],
+          "comments": [],
+          "id": "95d42339-1904-478f-95e2-6d9cf1525d42",
+          "autor": 3
+        }
       ]
     },
     {
