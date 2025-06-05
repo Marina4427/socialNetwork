@@ -1,0 +1,144 @@
+.editMyProfile {
+padding: 30px 0;
+height: 200vh;
+background: black;
+width: 100%;
+.width{
+   width: 350px;
+}
+&__title{
+  font-size: 25px;
+  margin-bottom: 40px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #555;
+}
+&__info{
+      display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+&__content{
+ display: flex;
+ flex-direction: column;
+ gap: 20px;
+ padding-inline: 30px;
+}
+&__field{
+  background: #222;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+   appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+&__card{
+display: flex;
+justify-content: flex-start;
+}
+&__label{
+flex-wrap: nowrap;
+width: 200px;
+}
+&-btn-save{
+  background-color: #3B82F6;
+  padding: 7px 15px;
+  border-radius: 8px;
+  margin-top: 60px;
+  align-self: center;
+}
+&__multiselector{
+  color: #888;
+  background-color: #222;
+}
+
+  /* Для Chrome, Safari, Edge */
+select::-webkit-scrollbar {
+  width: 8px;
+}
+
+select::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+
+select::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+  border: 2px solid #f0f0f0;
+}
+
+select::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+textarea {
+  height: 150px;
+
+}
+
+.select {
+  &__control {
+    background: #222 !important;
+    color: white !important;
+    border: 1px solid white !important;
+    border-radius: 4px !important; // Добавляем скругление
+  }
+
+  &__control--is-focused {
+    border-color: #3B82F6 !important;
+    box-shadow: 0 0 0 1px #3B82F6 !important;
+  }
+
+  &__menu {
+    background: #222 !important; // Тёмный фон всего меню
+    margin-top: 4px !important; // Небольшой отступ от контрола
+    border: 1px solid white !important;
+    border-radius: 4px;
+  }
+
+  &__menu-list {
+    padding: 0 !important; 
+    border-radius: 4px;
+  }
+
+  &__option {
+    background: #222 !important;
+    color: #fff !important;
+    
+    &:hover {
+      background: #3B82F6 !important;
+      cursor: pointer;
+    }
+  }
+
+  &__option--is-selected {
+    background: #2563EB !important;
+  }
+
+  &__multi-value {
+    background: #3b83f6 !important;
+    font-size: 18px;
+  }
+
+  &__multi-value__label {
+    color: #fff !important;
+  }
+
+  &__placeholder {
+    color: white !important;
+  }
+
+ 
+}
+
+ .custom-select {
+  background: #222 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E") no-repeat;
+  background-position: calc(100% - 12px) center;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm, Controller } from "react-hook-form";
 import { IMaskInput } from "react-imask";
@@ -10,9 +10,10 @@ import { useDispatch } from "react-redux";
 import { fillUser } from "../../redux/reducers/userSlice";
 import { useToast } from "@chakra-ui/react";
 import axios from "../../utils/axios";
+import { days, months, years } from "../../utils/birthday";
 
 const Register = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const toast = useToast();
   const [passwordView, setPasswordView] = useState(false);
   const {
@@ -25,7 +26,6 @@ const Register = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
   const passwordValue = watch("password");
 
   const [hasValue, setHasValue] = useState(false);
@@ -34,23 +34,23 @@ const Register = () => {
   };
 
   const registerUser = (data) => {
-    const { passwordAgain, ...userData } = data;
+    const { passwordAgain, day, month, year, ...userData } = data;
 
     axios
-      .post('/register', userData)
+      .post("/register", { ...userData, birthday: `${day} ${month} ${year}` })
       .then(({ data }) => {
         dispatch(fillUser(data.user));
         navigate("/");
       })
-      .catch(err => {
+      .catch((err) => {
         toast({
           title: t("register.errMessage"),
           status: "error",
           duration: 3000,
           isClosable: true,
-          position: 'center-top',
-        })
-      })
+          position: "center-top",
+        });
+      });
   };
 
   return (
@@ -292,31 +292,42 @@ const Register = () => {
               </span>
             </label>
           </div>
-          {/* <DownLoadBtn images={images} setImages={setImages} t={t} /> */}
           <div className="register__block">
             <label className="register__label">
               <h2 className="register__label-title">{t("form.labelAge")}</h2>
-              <input
-                type="date"
-                {...register("birthday", {
-                  required: { value: true, message: "Enter a date" },
-                })}
-                style={{
-                  border: errors.birthday && "#f5222d 1px solid",
-                }}
-                className={`custom-date register__field ${
-                  hasValue ? "has-value" : ""
-                }`}
-                onChange={handleChange}
-              />
-              <span className="register__error">
-                {errors.birthday && <BiErrorCircle fill="#f5222d" />}
-                <span className="register__error-text">
-                  {errors.birthday && errors.birthday.message}
-                </span>
-              </span>
-            </label>
 
+              <div className="register__block-birthday">
+                <select {...register("day")} className="register__field">
+                  <option value="">День</option>
+                  {days.map((item) => (
+                    <option key={item} value={item}>
+                      {item}
+                    </option>
+                  ))}
+                </select>
+
+                <select {...register("month")} className="register__field">
+                  <option value="">Месяц</option>
+                  {months.map((item) => (
+                    <option key={item.en} value={item.en}>
+                      {i18n.language === "ru" ? item.ru : item.en}
+                    </option>
+                  ))}
+                </select>
+
+                <select {...register("year")} className="register__field">
+                  <option value="">Год</option>
+                  {years.map((item) => (
+                    <option key={item} value={item}>
+                      {item}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </label>
+          </div>
+
+          <div className="register__block">
             <label className="register__label">
               <h2 className="register__label-title">{t("form.labelCity")}</h2>
               <input

@@ -14,7 +14,7 @@
   
 }
 
-a, a:link, a:visited  {
+a, a:link  {
   color: inherit;
   text-decoration: none;
 }
@@ -28,6 +28,10 @@ input {
   background-color: transparent;
   border: none;
 }
+
+// select {
+//   scrollbar-width: 1px;
+// }
 
 $blue: #0275b1;
 $black: #181818;
@@ -65,3 +69,4 @@ $border: #3e4042;
 @import "notification";
 @import "photos";
 @import "requests";
+@import "editMyProfile"

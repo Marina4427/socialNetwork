@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { Avatar, Image, useToast } from "@chakra-ui/react";
@@ -56,7 +56,7 @@ const Friends = () => {
         from: user.id,
       };
 
-      await axios.patch(`http://localhost:4444/users/${receiverId}`, {
+      await axios.patch(`/users/${receiverId}`, {
         notifications: [...notifications, newNotification],
       });
 
@@ -161,7 +161,7 @@ const Friends = () => {
                     <p className="friends__card-friends">Нет общих друзей</p>
                   </div>
 
-                  {user.friendRequests?.includes(item.id) ? (
+                  {user.friendRequests?.includes(item.id) || user.friends?.includes(item.id) ? (
                     <MdOutlineDone />
                   ) : (
                     <button

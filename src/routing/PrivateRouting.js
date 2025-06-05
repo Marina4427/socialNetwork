@@ -8,6 +8,7 @@ import Friends from '../pages/Friends/Friends';
 import Notifications from '../pages/Notifications/Notifications';
 import Photos from '../pages/Photos/Photos';
 import Requests from '../pages/Requests/Requests';
+import EditProfile from '../pages/EditProfile/EditProfile';
 
 const PrivateRouting = () => {
     return (
@@ -19,6 +20,7 @@ const PrivateRouting = () => {
                 <Route path='photos' element={<Photos/>}/>
                 <Route path='' element={<Home/>}/>
                 <Route path='requests' element={<Requests/>}/>
+                <Route path='editprofile' element={<EditProfile/>}/>
                 <Route path='*' element={<NotFound/>}/>
 
             </Route>

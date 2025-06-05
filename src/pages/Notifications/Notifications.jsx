@@ -54,22 +54,21 @@ const Notifications = () => {
     }
   };
 
-
   const rejectFriends = async (id) => {
-    try {      
+    try {
       axios.patch(`/users/${id}`, {
         friendRequests: id.friendRequests.filter((id) => id !== user.id),
       });
+
       const updatedNotifications = user.notifications.filter(
         (n) => n.from !== id
       );
-  
+
       const updatedUser = await axios.patch(`/users/${user.id}`, {
         notifications: updatedNotifications,
       });
-  
+
       dispatch(fillUser(updatedUser.data));
-  
       toast({
         title: "Запрос отклонён",
         status: "info",
@@ -87,68 +86,63 @@ const Notifications = () => {
     }
   };
 
-
   return (
     <section className="notification">
       <div className="container">
         <div className="notification__content">
           <h2 className="notification__title"> Уведомления</h2>
+          {!user.notifications || !user.notifications.length ? (
+            <p>Нет новых уведомлений</p>
+          ) : (
+            <div className="notification__list">
+              {data.map((item) => (
+                <div key={item.id} className="notification__card">
+                  <div className="notification__card-left">
+                    <Image
+                      src={item.photo}
+                      boxSize="75px"
+                      borderRadius="full"
+                      fit="cover"
+                      alt={`${item.name} ${item.surname}`}
+                      fallbackSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD5CysVsiTDenCVvLYM6u2ElQnZST7jjmFdw&s"
+                    />
+                    <div className="notification__info">
+                      <p className="notification__info-name">
+                        {" "}
+                        {item.name} {item.surname}
+                      </p>
+                      <p className="notification__info-action">
+                        {" "}
+                        хочет добавить вас в друзья
+                      </p>
+                      <p className="notification__info-city"> {item.city} </p>
+                    </div>
+                  </div>
 
-          {(!user.notifications || !user.notifications.length) ? (
-          <p>Нет новых уведомлений</p>
-        ) : (
-
-
-
-          <div className="notification__list">
-            {data.map((item) => (
-              <div key={item.id} className="notification__card">
-                <div className="notification__card-left">
-                  <Image
-                    src={item.photo}
-                    boxSize="75px"
-                    borderRadius="full"
-                    fit="cover"
-                    alt={`${item.name} ${item.surname}`}
-                    fallbackSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD5CysVsiTDenCVvLYM6u2ElQnZST7jjmFdw&s"
-                  />
-                  <div className="notification__info">
-                    <p className="notification__info-name">
-                      {" "}
-                      {item.name} {item.surname}
-                    </p>
-                    <p className="notification__info-action">
-                      {" "}
-                      хочет добавить вас в друзья
-                    </p>
-                    <p className="notification__info-city"> {item.city} </p>
+                  <div className="notification-btns">
+                    {" "}
+                    <Button
+                      onClick={() => rejectFriends(item.id)}
+                      colorScheme="gray"
+                      color="black"
+                      size="sm"
+                      variant="solid"
+                    >
+                      Отклонить
+                    </Button>
+                    <Button
+                      onClick={() => acceptFriends(item.id)}
+                      colorScheme="blue"
+                      size="sm"
+                      variant="solid"
+                    >
+                      Принять
+                    </Button>
                   </div>
                 </div>
-
-                <div className="notification-btns">
-                  {" "}
-                  <Button
-                    onClick={() => rejectFriends(item.id)}
-                    colorScheme="gray"
-                    color="black"
-                    size="sm"
-                    variant="solid"
-                  >
-                    Отклонить
-                  </Button>
-                  <Button
-                    onClick={() => acceptFriends(item.id)}
-                    colorScheme="blue"
-                    size="sm"
-                    variant="solid"
-                  >
-                    Принять
-                  </Button>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>

@@ -1,8 +1,13 @@
 .notification {
   background-color: $background;
   min-height: 100vh;
-  padding-top: 50px;
+  padding-top: 20px;
   width: 100%;
+  &__none{
+    margin-left: 50px;
+    margin-top: 30px;
+  }
+  
   &__content {
     background-color: #181818;
     max-width: 85%;
@@ -16,6 +21,7 @@
   &__list{
     display: flex;
     flex-direction: column;
+   
   }
   &__card{
     width: 100%;
