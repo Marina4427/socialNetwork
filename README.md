@@ -16,16 +16,16 @@ Marina4427/socialNetwork
 
 ## 📌 Скриншоты
 ### 🏠 Мой профиль
-![Мой профиль](./screenshots/MyProfile.png)
+[Мой профиль](./screenshots/MyProfile.png)
 
 ### 👤 Друзья и поиск друзей
-![Друзья и поиск друзей](./screenshots/friends.png)
+[Друзья и поиск друзей](./screenshots/friends.png)
 
 ### 🖼️ Фото
-![Фото](./screenshots/photos.png)
+[Фото](./screenshots/photos.png)
 
 ### ⏱️ Запросы
-![Запросы](./screenshots/requests.png)
+[Запросы](./screenshots/requests.png)
 
 
 ## 🚀 Возможности
