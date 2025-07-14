@@ -21,13 +21,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
- {/* <Routes>
-            <Route path='/' element={<Layout /> }>
-                <Route path='' element={<Home/>}/>
-                <Route path='*' element={<NotFound/>}/>
-            </Route>
-        </Routes> */}

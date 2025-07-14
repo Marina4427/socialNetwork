@@ -9,12 +9,14 @@ import Notifications from '../pages/Notifications/Notifications';
 import Photos from '../pages/Photos/Photos';
 import Requests from '../pages/Requests/Requests';
 import EditProfile from '../pages/EditProfile/EditProfile';
+import UserProfile from '../components/userProfile/UserProfile';
 
 const PrivateRouting = () => {
     return (
         <Routes>
             <Route path='/' element={<Layout /> }>
                 <Route path='myprofile' element={<MyProfile/>}/>
+                <Route path="/profile/:id" element={<UserProfile />} />
                 <Route path='friends' element={<Friends/>} />
                 <Route path='notifications' element={<Notifications/>} />
                 <Route path='photos' element={<Photos/>}/>

@@ -236,10 +236,6 @@ const MyProfile = () => {
           </div>
         )}
       </div>
-
-      {/* <div className="profile__news">
-        <h2 className="profile__title"> News </h2>
-      </div> */}
     </section>
   );
 };

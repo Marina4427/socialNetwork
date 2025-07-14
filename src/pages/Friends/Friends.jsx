@@ -8,6 +8,7 @@ import { changeSearch } from "../../redux/reducers/findUsersSlice";
 import { MdOutlineDone } from "react-icons/md";
 import axios from "../../utils/axios";
 import { fillUser } from "../../redux/reducers/userSlice";
+import { NavLink } from "react-router-dom";
 
 const Friends = () => {
   const dispatch = useDispatch();
@@ -115,9 +116,9 @@ const Friends = () => {
                 />
                 {/* <div className="friends__card-bottom"> */}
                   <div className="friends__card-name">
-                    <a href="#!" className="friends__card-link">
+                    <NavLink to={`/profile/${item.id}`} className="friends__card-link">
                       {item.name} {item.surname}
-                    </a>
+                    </NavLink>
                   </div>
                 </div>
               // </div>
@@ -155,9 +156,9 @@ const Friends = () => {
 
                 <div className="friends__card-bottom">
                   <div className="friends__card-info">
-                    <a href="#!" className="friends__card-link">
+                    <NavLink to={`/profile/${item.id}`} className="friends__card-link">
                       {item.name} {item.surname}
-                    </a>
+                    </NavLink>
                     <p className="friends__card-friends">Нет общих друзей</p>
                   </div>
 

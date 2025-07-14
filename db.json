@@ -13,7 +13,12 @@
       "id": 2,
       "friends": [],
       "friendRequests": [],
-      "notifications": []
+      "notifications": [
+        {
+          "type": "friend_request",
+          "from": 5
+        }
+      ]
     },
     {
       "email": "marina@ya.ru",
@@ -166,10 +171,22 @@
       ],
       "friendRequests": [
         7,
-        8
+        8,
+        2,
+        10,
+        9
       ],
       "notifications": [],
-      "photos": [],
+      "photos": [
+        {
+          "url": "http://localhost:3001/uploads/4bbd6d25-6f78-4be3-bd05-615d52b7a6e5.JPG",
+          "description": ""
+        },
+        {
+          "url": "http://localhost:3001/uploads/37ec7d9e-5f60-4bc4-aef7-d844e5371b50.jpeg",
+          "description": "Kissa"
+        }
+      ],
       "info": {
         "about": "🔭 About Me\nЯ фронтэнд-разработчик. Сейчас я проживаю в городе Санкт-Петербург",
         "family": "Не женат",
@@ -289,6 +306,10 @@
         {
           "type": "friend_request",
           "from": 3
+        },
+        {
+          "type": "friend_request",
+          "from": 5
         }
       ]
     },
@@ -309,6 +330,10 @@
         {
           "type": "friend_request",
           "from": 3
+        },
+        {
+          "type": "friend_request",
+          "from": 5
         }
       ]
     },
