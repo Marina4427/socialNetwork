@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# SocialNetwork 📱
+Marina4427/socialNetwork
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Функциональная социальная сеть с возможностью регистрации, добавления друзей, публикации постов с эмодзи и загрузкой фото. Интерфейс поддерживает локализацию и сохраняет состояние сессии между перезапусками.
 
-## Available Scripts
+## ⚙️ Использование
+- Регистрация / вход: создайте аккаунт или войдите в существующий
 
-In the project directory, you can run:
+- Лента: создавайте посты, добавляйте эмоджи, просматривайте посты других
 
-### `npm start`
+- Профиль: редактируйте информацию о себе, меняйте язык
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Подписки: добавляйте друзей и просмативайте уведомления
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Фтографии: загружайте изображения на свою страницу
 
-### `npm test`
+## 📌 Скриншоты
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Возможности
 
-### `npm run build`
+- 🔐 Регистрация и вход (поддержка i18n на формах входа/регистрации)
+  
+- 👤 Редактирование личного профиля (имя, дата рождения и другая информация о себе)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- 🧑‍🤝‍🧑 Отправка и принятие запросов в друзья
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- 🔔 Уведомления о входящих заявках и действиях
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- 📃 Создание, удаление, просмотр постов
+  
+- ⏱️ Отображение времени публикации с помощью timeago.js
 
-### `npm run eject`
+- 😊 Вставка эмодзи в посты с помощью EmojiPicker
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- 🖼️ Загрузка фотографий
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- 🌍 Просмотр страниц других пользователей
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- 🌐 Переключение языка интерфейса (формы login/register) через i18n
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- ♻️ Хранение состояния приложения между перезапусками с помощью redux-persist
 
-## Learn More
+ 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🧩 Стек технологий
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+-  Frontend: React
 
-### Code Splitting
+- **UI-библиотека:** [Chakra UI](https://chakra-ui.com/) — адаптивные и доступные компоненты
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+-  State Management: Redux + Redux Toolkit + redux-persist
 
-### Analyzing the Bundle Size
+-  i18n: react-i18next
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+-  Emoji: emoji-picker-react
 
-### Making a Progressive Web App
+-  Дата и время: timeago.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+-  Стилизация: SCSS
 
-### Advanced Configuration
+-  Backend: json-server-auth + Express
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+-  База данных: db.json с использованием json-server
 
-### Deployment
+## 🔧 Установка
+```bash
+git clone https://github.com/Marina4427/socialNetwork.git
+cd socialNetwork
+npm install
+npm run dev
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Планы по развитию
 
-### `npm run build` fails to minify
+- Внедрить чат в реальном времени
+- Лайки, репосты, комметарии к постам
+- Страница "Избранное" (последняя активность пользователя)
+- Фотоальбомы
+- На всем сайте сделать смену языка (сейчас поодерживается на формах регистрации и входа)
+- Добавить светлую тему
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
