@@ -47,7 +47,6 @@ Marina4427/socialNetwork
 
 ## 🔧 Установка
 ```bash
-Копировать
 git clone https://github.com/Marina4427/socialNetwork.git
 cd socialNetwork
 npm install
